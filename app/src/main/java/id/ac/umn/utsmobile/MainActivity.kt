@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
             second = newSecond % 60
         } else {
             second = newSecond
+            //33333
         }
         if (minute >= 60) {
             hour += minute / 60
