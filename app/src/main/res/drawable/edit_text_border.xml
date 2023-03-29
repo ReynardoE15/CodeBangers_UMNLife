@@ -2,9 +2,9 @@
 <shape
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
+    <!-- Text Border Properties -->
     <solid
         android:color="@android:color/transparent"/>
-
     <corners
         android:bottomRightRadius="12dp"
         android:bottomLeftRadius="12dp"
