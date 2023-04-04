@@ -6,7 +6,8 @@ import android.os.CountDownTimer
 import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import id.ac.umn.jam.databinding.ActivityMainBinding
+import id.ac.umn.codebangers_umnlife.R
+import id.ac.umn.codebangers_umnlife.databinding.ActivityMainBinding
 
 
 class GameDashboard : AppCompatActivity() {
