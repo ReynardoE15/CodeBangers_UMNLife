@@ -1,50 +1,62 @@
-package id.ac.umn.utsmobile
+package id.ac.umn.jam
 
-import androidx.appcompat.app.AppCompatActivity
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
-import java.util.*
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
+//
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        // Find the TextView that will display the time
-        val timeTextView = findViewById<TextView>(R.id.timeTextView)
+        setContentView(R.layout.activity_login)
 
-        // Update the time
-        updateTime()
-    }
-    private var timeMultiplier = 10
-    private fun updateTime() {
-        val timeTextView = findViewById<TextView>(R.id.timeTextView)
-        val calendar = Calendar.getInstance()
-        var hour = calendar.get(Calendar.HOUR_OF_DAY)
-        var minute = calendar.get(Calendar.MINUTE)
-        var second = calendar.get(Calendar.SECOND)
 
-        // Calculate the new time, where 1 second = 1 minute in the game
-        val timeMultiplier = 60
-        val newSecond = (second + 1) * timeMultiplier
-        if (newSecond >= 60) {
-            minute += newSecond / 60
-            second = newSecond % 60
-        } else {
-            second = newSecond
-            //33333
+//        val clockTextView = findViewById<TextView>(R.id.clock)
+//        clock = WaktuGame(clockTextView)
+
+        val swipeButton: Button = findViewById(R.id.buttonSwipe1)
+        swipeButton.setOnClickListener{
+            gantiGambar()
         }
-        if (minute >= 60) {
-            hour += minute / 60
-            minute %= 60
+        val swipesButton: Button = findViewById(R.id.buttonSwipe2)
+        swipesButton.setOnClickListener{
+            gantiGambar()
+        }
+        val test: Button = findViewById(R.id.buttonLogin)
+        test.setOnClickListener {
+            val inputNama = findViewById<EditText>(R.id.inputNama)
+            val pilihKarakter = findViewById<ImageView>(R.id.char1)
+
+            val inputText = inputNama.text.toString()
+            val intent = Intent(this, GameDashboard::class.java).apply {
+                putExtra("EXTRA_TEXT", inputText)
+            }
+            startActivity(intent)
         }
 
-        // Format the time string as "HH:mm:ss"
-        val timeString = String.format("%02d:%02d:%02d", hour, minute, second / timeMultiplier)
-        timeTextView.text = timeString
 
-        // Update the time again after 1 second
-        timeTextView.postDelayed({ updateTime() }, (1000 / timeMultiplier).toLong())
     }
+
+    private fun gantiGambar() {
+        val dice = PilihChar(6)
+        val diceRoll = dice.roll()
+        val diceImage: ImageView = findViewById(R.id.char1)
+        when (diceRoll) {
+            1 -> diceImage.setImageResource(R.drawable.character_boy)
+            2 -> diceImage.setImageResource(R.drawable.character_girl)
+        }
+
+    }
+
 }
+
+
+
+
+
