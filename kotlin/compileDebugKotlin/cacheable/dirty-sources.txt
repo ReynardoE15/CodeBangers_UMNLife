@@ -1,0 +1,5 @@
+C:\Users\auddl\Downloads\CodeBangers_UMNLife-master\app\src\main\java\id\ac\umn\codebangers_umnlife\WaktuGame.kt
+C:\Users\auddl\Downloads\CodeBangers_UMNLife-master\app\src\main\java\id\ac\umn\codebangers_umnlife\Mahasiswa.kt
+C:\Users\auddl\Downloads\CodeBangers_UMNLife-master\app\src\main\java\id\ac\umn\codebangers_umnlife\MainActivity.kt
+C:\Users\auddl\Downloads\CodeBangers_UMNLife-master\app\src\main\java\id\ac\umn\codebangers_umnlife\model\Mahasiswa.kt
+C:\Users\auddl\Downloads\CodeBangers_UMNLife-master\app\src\main\java\id\ac\umn\codebangers_umnlife\GameDashboard.kt
